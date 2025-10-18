@@ -97,6 +97,7 @@ header img {
     border: 1px solid black;
     min-width: 17rem;
     background-color:rgb(255, 240, 221);
+    justify-items: center;
     border-radius: 22px;
     margin-bottom: 0px;
     display: block;
@@ -111,7 +112,6 @@ header img {
 .element .picture{
     border: 1px solid black;
     display: flex;
-    justify-self: center;
     margin-top: 3rem;
     margin-left: 1rem;
     margin-right: 1rem;
@@ -167,6 +167,7 @@ button {
     color: rgb(255, 245, 233);
     border: none;
 }
+
 
 
 
