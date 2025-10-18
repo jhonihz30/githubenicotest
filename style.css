@@ -52,7 +52,6 @@ header img {
     display: block;
     align-self: center;
     justify-self: center;
-    margin: 200px;
     margin-top: 20px;
     margin-bottom: 0;
 
@@ -164,4 +163,5 @@ button {
     border: none;
 
 }
+
 
