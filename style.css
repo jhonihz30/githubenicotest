@@ -49,7 +49,7 @@ header img {
 .intro {
     max-width: 800px;
     min-width: 300px;
-    display: flex;
+    display: block;
     align-self: center;
     justify-self: center;
     margin: 200px;
@@ -162,4 +162,5 @@ button {
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: rgb(255, 245, 233);
     border: none;
+
 }
