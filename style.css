@@ -7,12 +7,8 @@ body {
     background-image: url(images/background.png);
     background-repeat: repeat;
     background-size: 275px 275px;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    justify-self: center;
-    align-self: center;
-    align-content: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .ig{
@@ -63,12 +59,11 @@ header img {
 .intro {
     max-width: 40rem;
     min-width: 2rem;
-    display: block;
-    align-self: center;
-    justify-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: 2rem;
     margin-bottom: 0px;
-
 }
 
 
@@ -227,6 +222,15 @@ button {
 .dir input:focus {
     outline: none;
 }
+
+.web {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
 
 
 
