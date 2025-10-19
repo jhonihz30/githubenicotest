@@ -117,6 +117,8 @@ header img {
 }
 
 .ped {
+    display: flex;
+    justify-self: center;
     align-self: center;
     background-color: rgb(136, 95, 40);
     transform: scale(1);
@@ -222,3 +224,4 @@ button {
 .dir input:focus {
     outline: none;
 }
+
