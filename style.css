@@ -81,8 +81,9 @@ header img {
 
 .catalogo {
     margin-top: 5rem;
-    display: block;
-    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .catalogo .title{
@@ -224,4 +225,5 @@ button {
 .dir input:focus {
     outline: none;
 }
+
 
