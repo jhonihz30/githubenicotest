@@ -96,10 +96,11 @@ header img {
 .element {
     min-width: 17rem;
     background-color:rgb(255, 240, 221);
-    justify-items: center;
     border-radius: 22px;
     margin-bottom: 0px;
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     transition: background-color 0.5s ease,transform 0.5s ease
 }
 
@@ -163,6 +164,7 @@ button {
     color: rgb(255, 245, 233);
     border: none;
 }
+
 
 
 
