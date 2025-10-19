@@ -14,7 +14,7 @@ body {
 }
 
 .ig{
-    display: flex;
+    display: block;
     align-self: center;
     justify-self: center;
     width: 3rem;
@@ -225,5 +225,6 @@ button {
 .dir input:focus {
     outline: none;
 }
+
 
 
