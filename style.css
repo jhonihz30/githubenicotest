@@ -153,7 +153,9 @@ header img {
 button {
     margin: 5rem;
     display: flex;
-    justify-self: center;
+     justify-self: center;
+    align-content: center;
+    align-self: center;
     font-size: 2rem;
     background-color: rgb(165, 91, 42);
     border-radius: 10px;
@@ -164,6 +166,7 @@ button {
     color: rgb(255, 245, 233);
     border: none;
 }
+
 
 
 
