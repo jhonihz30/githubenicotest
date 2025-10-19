@@ -10,6 +10,15 @@ body {
     text-align: center;
     justify-self: center;
     align-self: center;
+    align-content: center;
+}
+
+.ig{
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    width: 3rem;
+    height: 3rem;
 }
 
 header {
@@ -28,6 +37,7 @@ header div{
 
 header nav {
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-right: 1rem;
     gap: 2rem;
     display: flex;
     align-items: center;
@@ -49,8 +59,8 @@ header img {
 }
 
 .intro {
-    max-width: 800px;
-    min-width: 200px;
+    max-width: 40rem;
+    min-width: 2rem;
     display: block;
     align-self: center;
     justify-self: center;
@@ -85,6 +95,7 @@ header img {
 }
 
 .section {
+    max-width: 1200px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -102,11 +113,23 @@ header img {
     display: flex;
     flex-direction: column;
     align-items: center;
+    
+}
+
+.ped {
+    align-self: center;
+    background-color: rgb(136, 95, 40);
+    transform: scale(1);
     transition: background-color 0.5s ease,transform 0.5s ease
 }
 
-.element:hover {
-    background-color:rgb(255, 255, 255);
+.ped:hover {
+    background-color: rgb(189, 182, 87);
+    transform: scale(1.1);
+}
+
+.ped:click {
+    background-color: rgb(67, 194, 116);
     transform: scale(1.1);
 }
 
@@ -154,25 +177,48 @@ header img {
 button {
     margin: 1rem;
     display: flex;
-     justify-self: center;
+    justify-self: center;
     align-content: center;
     align-self: center;
     font-size: 2rem;
     background-color: rgb(165, 91, 42);
     border-radius: 10px;
     padding: 1rem;
-    padding-right: 2rem:
-    padding-left: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: rgb(255, 245, 233);
     border: none;
 }
 
+.dir {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(238, 181, 129);
+    margin-top: 3rem;
+    border-radius: 30px;
+    margin: 3rem;
+}
+
+.dir a{
+    font-size: 30px;
+}
 
 
 
+.dir input {
+    text-align: center;
+    margin-top: 20px;
+    width: 60%;
+    background: none;
+    font-size: 20px;
+    border: none;
+    border-bottom: 3px solid white;
+    margin-bottom: 10px;;
 
+}
 
-
-
-
+.dir input:focus {
+    outline: none;
+}
