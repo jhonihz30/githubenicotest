@@ -13,6 +13,7 @@ body {
 }
 
 header {
+    margin: 1rem;
     display: flex;
     justify-content: space-between;
 }
@@ -166,6 +167,7 @@ button {
     color: rgb(255, 245, 233);
     border: none;
 }
+
 
 
 
