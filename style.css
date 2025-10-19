@@ -4,7 +4,9 @@
 }
 
 body {
-    background-color: rgb(255, 207, 167);
+    background-image: url(images/background.png);
+    background-repeat: repeat;
+    background-size: 275px 275px;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -225,6 +227,7 @@ button {
 .dir input:focus {
     outline: none;
 }
+
 
 
 
