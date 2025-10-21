@@ -1,0 +1,12 @@
+Nombre;Detalle;Precio;Descripcion;Imagen;MSG
+ROGEL;;$1400;Es un postre muy rico 100% Recomendado.;Rogel;ROGEL
+CHEESSECAKE;;$200;Tiene mermelada de frutilla. Ideal para el verano.;Cheesecake;Chessecake
+BROWNIE;;$900;Redondo 22cm, Para los amantes del chocolate.Con crema doble $1300;Brownie;Brownie
+LEMON PIE;;$950;Tiene limon :D;LemonPie;Lemon Pie
+BROWNIE;C/Dulce de leche;$900;Redondo 22cm;BrownieDDL;Brownie con dulce de leche
+MASSINI;18x18cm;$750;18x18cm;Massini;Massini de 18x18
+MASSINI;25x25cm;$1150;25x25cm;Massini;Massini de 25x25
+
+
+
+

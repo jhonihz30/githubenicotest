@@ -3,6 +3,10 @@
     padding: 0;
 }
 
+.hidden {
+    display: none !important;
+}
+
 body {
     background-color: rgb(255, 207, 167);
     background-repeat: repeat;
@@ -104,6 +108,7 @@ header img {
 }
 
 .element {
+    box-shadow: 3px 3px 5px rgba(104, 65, 40, 0.301);
     min-width: 17rem;
     background-color:rgb(255, 240, 221);
     border-radius: 22px;
@@ -113,6 +118,7 @@ header img {
     align-items: center;
     position: relative;
 }
+
 
 .ped {
     display: flex;
@@ -138,21 +144,25 @@ header img {
     position: relative;
     margin-top: 1.5rem;
     width: 15rem;
+    height: 20rem;
     overflow: hidden;
     border-radius: 25px;
+
+    
 }
 
 .image_container .picture{
+    height: 100%;
+    /* height: auto; */
     width: 100%;
-    display: flex;
+    display: block;
     margin-bottom: 0px;
-    height: auto;
     filter: blur(0px);
     transition: filter 0.5s ease;
 }
 
 .image_container.active .picture{
-    filter: blur(10px);
+    filter: blur(8px);
 }
 
 
@@ -170,7 +180,7 @@ header img {
     word-wrap: break-word;
     color: white;
     text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);;
-    background-color: rgba(160, 157, 145, 0.7);
+    background-color: rgba(100, 99, 91, 0.527);
     top: 0;
     left: 0;
     transform:scale(1.5);
@@ -224,7 +234,12 @@ header img {
     color: rgb(90, 74, 55);
     font-size: 1.6rem;
     font-weight: 600;
-    
+}
+
+.element .detail{
+    font-size: 1.2rem;
+    color: rgb(143, 133, 77);
+    min-height: 1.5rem;
 }
 
 .element .price {
@@ -262,6 +277,7 @@ button {
 }
 
 .dir {
+    padding: 0.5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
