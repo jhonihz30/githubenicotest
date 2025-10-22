@@ -195,6 +195,7 @@ header img {
 .info_button {
     display: flex;
     position: absolute;
+    transform: scale(1);
     z-index: 1;
     border-radius: 50%;
     width: 2.5rem;
@@ -207,7 +208,11 @@ header img {
     box-sizing: border-box;
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.75);
     filter: saturate(1);
-    transition: filter 0.5s ease;
+    transition: filter 0.5s ease,transform 0.5s ease;
+}
+
+.info_button:hover {
+    transform: scale(1.1);
 }
 
 
@@ -249,8 +254,15 @@ header img {
     color: rgb(90, 74, 55);
     font-size: 2.5rem;
     font-weight:500;
-    margin-bottom: 1rem;
     
+}
+
+.element .subprice {
+    min-height: 2.2rem;
+    max-width: 16rem;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: rgb(136, 128, 55);
 }
 
 .element .star {

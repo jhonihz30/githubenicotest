@@ -10,7 +10,7 @@ fetch('catalogo.txt')
             const values = line.trim().split(';').map(h => h.replace(/"/g,"").trim());
             const obj = {}
             headers.forEach((header, i) => {
-                obj[header] = values[i];
+                obj[header] = values[i].replace(/}/g, "<br>");
             });
             return obj
         })
@@ -34,6 +34,7 @@ fetch('catalogo.txt')
                 </div>
             </div>
             <a class="price">${postre.Precio}</a>
+            <a class="price subprice">${postre.SubPrecio}</a>
             <button class="ped" onclick= "refreshSel('${postre.MSG}')">Pedir</button>`
             container.appendChild(card)
         })
@@ -48,7 +49,7 @@ function refreshSel(value) {
 function pedir() {
     direccion = document.getElementById("ger").value
     let mensaje = "¡Hola!, queria pedir " + selection + ", para la dirección: " + direccion + "."
-    window.location.href = "https://wa.me/59894850345?text=" + mensaje
+    window.location.href = "https://wa.me/59895219374?text=" + mensaje
 }
 
 function toggle_info(button) {
