@@ -56,6 +56,7 @@ header h1{
 }
 
 header img {
+    box-shadow: 2px 2px 2px rgba(138, 109, 86, 0.705);
     border-radius: 50%;
     width: 4rem;
 }
@@ -336,6 +337,7 @@ button {
     text-align: center;
     justify-content: center;
 }
+
 
 
 
