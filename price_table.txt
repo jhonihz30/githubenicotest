@@ -1,0 +1,18 @@
+ID;SubId;Nombre;Precio
+0;0;Rogel 20cm;$1000
+0;0;Rogel 24cm;$1390
+0;0;Rogel 28cm;$1550
+1;0;Cheessecake;$1400
+2;0;Brownie Comun 22cm;$1100
+2;1;Brownie C/Dulce de leche 22cm;$900
+2;2;Brownie Comun 22cm con chantilly;$1300
+3;0;Lemon Pie 26cm;$950
+4;0;Massini 18x18cm;$750
+4;1;PROMO X2 Massini 18x18cm;$1350
+5;0;Massini 25x25cm;$1150
+5;1;PROMO X2 Massini 25x25cm;$2000
+
+
+
+
+

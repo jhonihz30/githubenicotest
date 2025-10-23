@@ -1,5 +1,6 @@
-let selection = null
 let direccion = null
+let prices_table = null
+let order = []
 
 fetch('catalogo.txt')
     .then(response => response.text())
@@ -15,7 +16,6 @@ fetch('catalogo.txt')
             return obj
         })
 
-        data.reverse()
         const container = document.getElementById('section');
         data.forEach(postre => {
             const card = document.createElement('div');
@@ -35,20 +35,35 @@ fetch('catalogo.txt')
             </div>
             <a class="price">${postre.Precio}</a>
             <a class="price subprice">${postre.SubPrecio}</a>
-            <button class="ped" onclick= "refreshSel('${postre.MSG}')">Pedir</button>`
+            <button class="ped" onclick= "show_order('${postre.ID}','${postre.SubId}')">Pedir</button>`
             container.appendChild(card)
         })
     });
 
-
-function refreshSel(value) {
-    selection = value;
-    console.log("Seleccionaste " ,selection)
-}
+fetch('price_table.txt')
+    .then(response => response.text())
+    .then(csvText => {
+        const lines = csvText.trim().split('\n');
+        const headers = lines[0].split(';').map(h => h.replace(/"/g,"").trim());
+        prices_table = lines.slice(1).map(line => {
+            const values = line.trim().split(';').map(h => h.replace(/"/g,"").trim());
+            const obj = {}
+            headers.forEach((header, i) => {
+                obj[header] = values[i].replace(/}/g, "<br>");
+            });
+            return obj
+        })
+    });
 
 function pedir() {
+    let list = ""
+    order.forEach(item => {
+        list += item.Item
+        list += ", "
+    })
+
     direccion = document.getElementById("ger").value
-    let mensaje = "¡Hola!, queria pedir " + selection + ", para la dirección: " + direccion + "."
+    let mensaje = "¡Hola! Te escribo para hacerte la siguiente orden: " + list + " para la dirección: " + direccion + "."
     window.location.href = "https://wa.me/59895219374?text=" + mensaje
 }
 
@@ -67,6 +82,69 @@ function toggle_info(button) {
         image_container.classList.add('active');
         button.classList.add("button_out")
     }
+}
 
-    
+const overlay = document.getElementById('overlay')
+overlay.addEventListener('click',() => {
+    overlay.classList.remove('enabled');
+})
+
+const selector = overlay.children[0]
+selector.addEventListener('click',(event) => {
+    event.stopPropagation();
+})
+
+function show_order(id,variant)
+{
+    overlay.classList.add('enabled')
+    const container = document.getElementById('inputsel');
+        container.replaceChildren();
+        prices_table.forEach(variacion => {
+            if (variacion.ID == id)
+            {
+                const option = document.createElement('option');
+                option.innerHTML = `${variacion.Nombre}`
+                option.value = `${variacion.SubId}`
+                container.appendChild(option)
+            }
+        });
+    container.selectedIndex = variant
+    refresh_price()
+}
+
+const element_selection = document.getElementById('inputsel');
+element_selection.addEventListener('change',() => {
+    refresh_price()
+})
+
+function refresh_price(){
+    const price = document.getElementById('pri');
+    const element_name = element_selection.options[element_selection.selectedIndex].text
+    const element_array = prices_table.find(item => item.Nombre === element_name);
+
+    price.textContent = element_array.Precio
+
+}
+
+function add_to_order(){
+    const element_name = element_selection.options[element_selection.selectedIndex].text
+    const element_array = prices_table.find(item => item.Nombre === element_name);
+
+    const order_container = document.getElementById('order');
+    const new_line = document.createElement('div');
+    new_line.classList.add('product');
+    new_line.innerHTML = `<p>X1 ${element_name}</p>
+    <p class="price">${element_array.Precio}</p>`
+    order_container.appendChild(new_line)
+
+    const total_price = document.getElementById('total');
+
+    order.push({"Item":element_name,"Price":element_array.Precio})
+    let Total = 0
+    order.forEach(item => {
+        Total += parseFloat(item.Price.replace(/[^0-9.]/g, '')); 
+        console.log(Total)
+    })
+    total_price.textContent = `Total: $${Total}`
+
 }

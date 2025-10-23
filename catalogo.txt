@@ -1,12 +1,11 @@
-Nombre;Detalle;Precio;SubPrecio;Descripcion;Imagen;MSG
-ROGEL;;$1000;;Es un postre muy rico 100% Recomendado }} Tamaño de 20cm: $1000. } }  Tamaño de 24cm: $1390. } } Tamaño de 28cm: $1550.;Rogel;ROGEL
-CHEESSECAKE;;$1400;;Tiene mermelada de frutilla. }  Ideal para el verano. } } Precio: $1400.;Cheesecake;Chessecake
-BROWNIE;;$1100;;Redondo 22cm. } } Especial para los amantes del chocolate. } } Variación con chantilly: $1300.;Brownie;Brownie
-LEMON PIE;;$950;;Tamaño: 26cm. } } Ideal para un gustito de verano.;LemonPie;Lemon Pie
-BROWNIE;C/Dulce de leche;$900;;Redondo 22cm. } } Simplemente irresistible.;BrownieDDL;Brownie con dulce de leche
-MASSINI;18x18cm;$750;o 2 X $1350;Tamaño: 18x18cm. } } -PROMO } 2 X $1350.;Massini;Massini de 18x18
-MASSINI;25x25cm;$1150;o 2 X $2000;Tamaño: 25x25cm. } } -PROMO } 2 X $2000.;Massini;Massini de 25x25
-
+ID;SubId;Nombre;Detalle;Precio;SubPrecio;Descripcion;Imagen;MSG
+0;0;ROGEL;;$1000;;Es un postre muy rico 100% Recomendado }} Tamaño de 20cm: $1000. } }  Tamaño de 24cm: $1390. } } Tamaño de 28cm: $1550.;Rogel;ROGEL
+1;0;CHEESSECAKE;;$1400;;Tiene mermelada de frutilla. }  Ideal para el verano. } } Precio: $1400.;Cheesecake;Chessecake
+2;0;BROWNIE;;$1100;;Redondo 22cm. } } Especial para los amantes del chocolate. } } Variación con chantilly: $1300.;Brownie;Brownie
+2;1;BROWNIE;C/Dulce de leche;$900;;Redondo 22cm. } } Simplemente irresistible.;BrownieDDL;Brownie con dulce de leche
+3;0;LEMON PIE;;$950;;Tamaño: 26cm. } } Ideal para un gustito de verano.;LemonPie;Lemon Pie
+4;0;MASSINI;18x18cm;$750;o 2 X $1350;Tamaño: 18x18cm. } } -PROMO } 2 X $1350.;Massini;Massini de 18x18
+5;0;MASSINI;25x25cm;$1150;o 2 X $2000;Tamaño: 25x25cm. } } -PROMO } 2 X $2000.;Massini;Massini de 25x25
 
 
 

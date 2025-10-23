@@ -23,7 +23,8 @@
         <div class="intro">
             <h1>Somos una pareja que hace postres con amor, construyendo nuestro futuro. Elegís sabor y cariño, y apoyás nuestro gran sueño. ¡Gracias!</h1>
         </div>
-    
+
+ 
         
         <div class="catalogo">
             <a class="title">NUESTRO CATÁLOGO</a>
@@ -56,6 +57,32 @@
         </div>
     </div>
         
+
+    <div class="overlay" id="overlay">
+        <div class="selector">
+            <div class="sel_info">
+                <h1>Agregar al pedido:</h1>
+                <hr>
+                <div id="order" class="order">
+                    <div class="product hidden">
+                        <p>X1 Massini</p>
+                        <p class="price">$PRICE</p>
+                    </div>
+                </div>
+                
+                <div class="control">
+                 <select id="inputsel"></select>
+                 <button onclick="add_to_order()">+</button>
+                </div>
+                <div class="lastinfo">
+                    <p id="pri" class="price">$0</p>
+                    <p id="total" class="price">Total: $0</p>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
