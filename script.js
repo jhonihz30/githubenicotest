@@ -2,6 +2,10 @@ let direccion = null
 let prices_table = null
 let order = []
 
+const alert_pedido = document.getElementById('alert-pedido')
+const alert_encuentro = document.getElementById('alert-encuentro')
+
+
 fetch('catalogo.txt')
     .then(response => response.text())
     .then(csvText => {
@@ -55,6 +59,24 @@ fetch('price_table.txt')
         })
     });
 
+
+const points = document.getElementById('points');
+points.childNodes.forEach(point => {
+    point.addEventListener('click',() =>{
+        select(point);
+    })
+})
+
+function select(selection) {
+    const puntos = document.getElementById('points');
+    puntos.childNodes.forEach(p => {
+        p.classList = ""
+    })
+    selection.classList = ('selected')
+    direccion = selection.textContent.trim()
+    alert_encuentro.classList.add("hidden")
+}
+
 function pedir() {
     let list = ""
     order.forEach(item => {
@@ -62,9 +84,24 @@ function pedir() {
         list += ", "
     })
 
-    direccion = document.getElementById("ger").value
-    let mensaje = "¡Hola! Te escribo para hacerte la siguiente orden: " + list + " para la dirección: " + direccion + "."
-    window.location.href = "https://wa.me/59895219374?text=" + mensaje
+    console.log(alert_pedido)
+
+    if (list === ""){
+        alert_pedido.classList.remove("hidden")
+        alert_pedido.scrollIntoView()
+    }
+    else if (direccion == null){
+        alert_encuentro.classList.remove("hidden")
+        alert_encuentro.scrollIntoView()
+    }
+    else {
+        let mensaje = "¡Hola! Te escribo para hacerte la siguiente orden: " + list + " el punto de encuentro, ¿Podria ser " + direccion + "?."
+        window.location.href = "https://wa.me/59895219374?text=" + mensaje
+    }
+
+
+    // direccion = document.getElementById("ger").value
+
 }
 
 function toggle_info(button) {
@@ -127,9 +164,11 @@ function refresh_price(){
 }
 
 function add_to_order(){
+    alert_pedido.classList.add("hidden")
     const element_name = element_selection.options[element_selection.selectedIndex].text
     const element_array = prices_table.find(item => item.Nombre === element_name);
 
+    const parent = document.getElementById('sel_info');
     const order_container = document.getElementById('order');
     const new_line = document.createElement('div');
     new_line.classList.add('product');
@@ -146,5 +185,7 @@ function add_to_order(){
         console.log(Total)
     })
     total_price.textContent = `Total: $${Total}`
+
+    parent.scrollTop = parent.scrollHeight;
 
 }

@@ -29,7 +29,23 @@
         <div class="catalogo">
             <a class="title">NUESTRO CATÁLOGO</a>
             
-            <div class="dir">
+            <div class="encounter">
+                <div id="points" class="points">
+                    <label>
+                      Punto A
+                    </label>
+
+                    <label>
+                        Punto B
+                    </label>
+
+                    <label>
+                        Punto C
+                    </label>
+                </div>
+            </div>
+
+            <div class="dir hidden">
                 <a alert>¿Vas a pedir? ¡Introduce tu direccion!</a>
                 <input id="ger" type="text" placeholder="Ej.Av. Italia 3495">
             </div>
@@ -54,13 +70,16 @@
             </div>
     
             <button class="ped" onclick="pedir()">¡HACÉ TU PEDIDO!<img class= "ig" src="https://static.vecteezy.com/system/resources/previews/018/930/748/original/whatsapp-logo-whatsapp-icon-whatsapp-transparent-free-png.png" alt=""></button>
+            <p id="alert-pedido" class="alerta hidden">*Armá tu pedido</p>
+            <p id="alert-encuentro" class="alerta hidden">*Elige un punto de encuentro</p>
         </div>
     </div>
         
+    
 
     <div class="overlay" id="overlay">
         <div class="selector">
-            <div class="sel_info">
+            <div id="sel_info" class="sel_info">
                 <h1>Agregar al pedido:</h1>
                 <hr>
                 <div id="order" class="order">
@@ -90,4 +109,7 @@
 </html>
 
 
-
+<!-- Pendiente -->
+ <!-- Agregar un boton para eliminar un item de la orden -->
+  <!-- Que no se pueda realizar pedido sin poner direccion o en su defecto poner el input al lado del boton -->
+   <!-- Agregar un par mas de iconos en la orden y en general. Algo que indique el envio a casa y demas -->
