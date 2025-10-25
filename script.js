@@ -61,16 +61,11 @@ fetch('price_table.txt')
 
 
 const points = document.getElementById('points');
-points.childNodes.forEach(point => {
-    point.addEventListener('click',() =>{
-        select(point);
-    })
-})
 
 function select(selection) {
     const puntos = document.getElementById('points');
     puntos.childNodes.forEach(p => {
-        p.classList = ""
+        p.firstChild.remove()
     })
     selection.classList = ('selected')
     direccion = selection.textContent.trim()

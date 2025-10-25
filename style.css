@@ -510,47 +510,104 @@ button {
     color: rgb(99, 99, 99);
 }
 
-.points {
-    flex-wrap: wrap;
+.encounter .title{
+    align-items: center;
+    justify-content: flex-start;
     display: flex;
-    justify-content: center;
-    margin: 20px;
-    gap: 1.3rem;
-    font-size: 1.2rem;
-    color: rgb(255, 255, 255);
-    font-weight: 600;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    gap: 0;
 }
 
-.points label
-{
-    border:2px solid #ffffff;
-    background: var(--colors_buttons_background);
-    padding: 0.4rem;
-    border-radius: 5px;
-    gap: 0.5rem;
+.encounter .title h1 {
+    display: flex;
+    white-space: normal;
+}
+
+.encounter .title img{
     margin: 0;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    opacity: 0.6;
-    transition: filter 0.5s ease, opacity 0.5s ease;
+    padding: 0;
+    display: block;
+    top: 2rem;
+    width: 3rem;
+    filter: drop-shadow(2px 2px);
 }
 
-.points label:hover {
-    filter: brightness(1.5);
-}
-
-.points label.selected {
-    opacity: 1;
-}
 
 .encounter {
+    margin-top: 3rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     display: flex;
+    color: rgba(0, 0, 0, 0.764);
     flex-direction: column;
     align-items: center;
     gap: 1rem;
 }
+
+
+.encounter label{
+    padding: 0.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    width: 8rem;
+    height: 2.5rem;
+    color: white;
+    background-color: rgb(161, 97, 97);
+    border-radius: 30px;
+}
+
+.points {
+    display: flex;
+    gap: 1.2rem;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.encounter input {
+    flex-shrink: 0;
+    appearance: none;
+    background-color: rgb(73, 73, 73);
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    opacity: 0.3;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    top: 0.2rem;
+    position: relative;
+}
+
+.encounter input:checked {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+
+.encounter input::after{
+    top: 50%;
+    left: 50%;
+    transform:  translate(-50%,-300%) scale(0.5);
+    position: absolute;
+    content: "";
+    background-image: url(https://images.vexels.com/media/users/3/131261/isolated/preview/b2e48580147ca0ed3f970f30bf8bb009-marcador-de-ubicacion-del-mapa.png);
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+    opacity: 0;
+    filter: invert(1);
+    transition: all 0.5s ease;
+}
+
+.encounter label p {
+    line-height: 1;
+    display: flex;
+    white-space:none;
+}
+
+.encounter input:checked::after{
+    transform:  translate(-50%,-80%) scale(0.8);
+    opacity: 1;
+}
+
+
 
 .alerta {
     color: rgb(255, 0, 0);
@@ -560,7 +617,12 @@ button {
     margin-bottom: 1rem;
 }
 
-@media (max-width: 480px)
+@media (max-width: 600px)
 {
-
+    .points {
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
 }
