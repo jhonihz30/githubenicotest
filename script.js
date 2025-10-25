@@ -1,6 +1,8 @@
 let direccion = null
 let prices_table = null
 let order = []
+let envio_cost = 0
+let total_amount = 0
 
 const alert_pedido = document.getElementById('alert-pedido')
 const alert_encuentro = document.getElementById('alert-encuentro')
@@ -63,10 +65,40 @@ fetch('price_table.txt')
 const points = document.getElementById('points');
 
 function sel(selection){
-    console.log("sds")
     direccion = selection.nextElementSibling.textContent.trim()
-    console.log(direccion)
+    let price = selection.nextElementSibling.nextElementSibling.textContent.trim().replace(/[()]/g,"")
     alert_encuentro.classList.add("hidden")
+
+    let d = document.getElementById('ubi');
+
+    if (d){
+        const order_container = document.getElementById('order');
+        const new_line = d;
+        new_line.classList.add('product');
+        new_line.innerHTML = `<div>
+        <img class="truck" src="https://cdn-icons-png.flaticon.com/512/171/171257.png" alt="">
+        <p>${direccion}</p>
+        </div>
+        <p class="price">${price}</p>`;
+        order_container.prepend(new_line)
+        envio_cost = price.replace('$',"")
+    }
+    else {
+        const order_container = document.getElementById('order');
+        const new_line = document.createElement('div');
+        new_line.id = 'ubi'
+        new_line.classList.add('product');
+        new_line.innerHTML = `<div>
+        <img class="truck" src="https://cdn-icons-png.flaticon.com/512/171/171257.png" alt="">
+        <p>${direccion}</p>
+        </div>
+        <p class="price">${price}</p>`;
+        order_container.appendChild(new_line)
+        order_container.prepend(new_line)
+        envio_cost = price.replace('$',"")
+    }
+    price_sum()
+    show_general_order()
 }
 
 function pedir() {
@@ -141,6 +173,21 @@ function show_order(id,variant)
     refresh_price()
 }
 
+function show_general_order()
+{
+    overlay.classList.add('enabled')
+    const container = document.getElementById('inputsel');
+        container.replaceChildren();
+        prices_table.forEach(variacion => {
+                const option = document.createElement('option');
+                option.innerHTML = `${variacion.Nombre}`
+                option.value = `${variacion.SubId}`
+                container.appendChild(option)
+        });
+    container.selectedIndex = variant
+    refresh_price()
+}
+
 const element_selection = document.getElementById('inputsel');
 element_selection.addEventListener('change',() => {
     refresh_price()
@@ -168,16 +215,20 @@ function add_to_order(){
     <p class="price">${element_array.Precio}</p>`
     order_container.appendChild(new_line)
 
-    const total_price = document.getElementById('total');
-
     order.push({"Item":element_name,"Price":element_array.Precio})
-    let Total = 0
-    order.forEach(item => {
-        Total += parseFloat(item.Price.replace(/[^0-9.]/g, '')); 
-        console.log(Total)
-    })
-    total_price.textContent = `Total: $${Total}`
+
+    price_sum()
 
     parent.scrollTop = parent.scrollHeight;
+}
 
+function price_sum(){
+    const total_price = document.getElementById('total');
+    total_amount = 0
+    order.forEach(item => {
+        total_amount += parseFloat(item.Price.replace(/[^0-9.]/g, '')); 
+    })
+    console.log(envio_cost)
+    total_amount += parseFloat(envio_cost)
+    total_price.textContent = `Total: $${total_amount}`
 }
