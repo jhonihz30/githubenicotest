@@ -62,13 +62,10 @@ fetch('price_table.txt')
 
 const points = document.getElementById('points');
 
-function select(selection) {
-    const puntos = document.getElementById('points');
-    puntos.childNodes.forEach(p => {
-        p.firstChild.remove()
-    })
-    selection.classList = ('selected')
-    direccion = selection.textContent.trim()
+function sel(selection){
+    console.log("sds")
+    direccion = selection.nextElementSibling.textContent.trim()
+    console.log(direccion)
     alert_encuentro.classList.add("hidden")
 }
 
